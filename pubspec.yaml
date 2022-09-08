@@ -1,0 +1,71 @@
+name: NutritionApplication
+description: A new Flutter project.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  fluttertoast: ^8.0.8
+  email_validator: ^2.0.1
+  cached_network_image: ^3.2.0
+  permission_handler: ^8.3.0
+  google_fonts: ^2.2.0
+  google_sign_in: ^5.2.3
+  percent_indicator: ^4.0.0
+  flutter_slidable: ^1.2.0
+  auto_size_text: ^3.0.0
+  geolocator: ^8.1.1
+  http: ^0.13.4
+  toggle_switch: ^1.4.0
+  phone_number: ^0.12.0+1
+  flutter_datetime_picker: ^1.5.1
+  intl: ^0.17.0
+  dio: ^4.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^1.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/img/logo.png
+    - assets/img/user_sample.png
+    - assets/img/body_type1.png
+    - assets/img/body_type2.png
+    - assets/img/body_type3.png
+    - assets/img/dd.png
+    - assets/img/dc.png
+    - assets/img/df.png
+    - assets/img/congratulations.webp
+    - assets/img/transaction.png
+    - assets/img/question_water_icon.jpeg
+    - assets/img/bmr.png
+    - assets/img/breakfast_icon.png
+    - assets/img/lunch_icon.png
+    - assets/img/dinner_icon.png
+    - assets/img/monday.png
+    - assets/img/tuesday.png
+    - assets/img/wednesday.png
+    - assets/img/thursday.png
+    - assets/img/friday.png
+    - assets/img/saturday.png
+    - assets/img/sunday.png
+    - assets/img/one.png
+    - assets/img/two.png
+    - assets/img/three.png
+    - assets/img/four.png
+    - assets/img/five.png
+    - assets/img/six.png
+    - assets/img/seven.png
