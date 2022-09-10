@@ -27,6 +27,9 @@ class APIRoutes {
       case 'ENROLL_MEAL_LIST':
         key = '${_baseRoute}mealitem/enroll';
         break;
+      case 'GET_GOAL_HISTORY':
+        key = '${_baseRoute}history';
+        break;
 
       default:
     }

@@ -66,12 +66,27 @@ class GoalController {
 
     var response = await http
         .post(Uri.parse(APIRoutes.getRoute("GET_MEAL_LIST")), body: data);
-
+    print(response.body);
     Map<String, dynamic> retriveList = jsonDecode(response.body);
     retriveList['meal_list'].forEach((value) {
       mealList.add(value);
     });
     return mealList;
+  }
+
+  Future<List<dynamic>> getGoalList(data) async {
+    List<dynamic> goalList = [];
+
+    var response = await http
+        .post(Uri.parse(APIRoutes.getRoute("GET_GOAL_HISTORY")), body: data);
+
+    print(response.body);
+
+    Map<String, dynamic> retriveList = jsonDecode(response.body);
+    retriveList['goal_list'].forEach((value) {
+      goalList.add(value);
+    });
+    return goalList;
   }
 
   Future<dynamic> getMealValues(data) async {

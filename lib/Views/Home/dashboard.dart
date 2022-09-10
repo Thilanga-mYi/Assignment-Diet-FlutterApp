@@ -3,6 +3,7 @@ import 'package:NutritionApplication/Models/Colors.dart';
 import 'package:NutritionApplication/Models/Goal.dart';
 import 'package:NutritionApplication/Models/Utils.dart';
 import 'package:NutritionApplication/Models/Utils/Routes.dart';
+import 'package:NutritionApplication/Views/Auth/Login.dart';
 import 'package:NutritionApplication/Views/Home/goal_list.dart';
 import 'package:NutritionApplication/Views/Home/goal_summery.dart';
 import 'package:NutritionApplication/Views/Home/question_goal.dart';
@@ -37,6 +38,15 @@ class _DashboardState extends State<Dashboard> {
             color: Colors.white,
           ),
         ),
+        actions: [
+          GestureDetector(
+            onTap: () => Routes(context: context).navigateReplace(Login()),
+            child: const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              child: Icon(Icons.logout_rounded),
+            ),
+          )
+        ],
       ),
       body: SafeArea(
           child: SizedBox(
@@ -88,6 +98,44 @@ class _DashboardState extends State<Dashboard> {
                       child: GestureDetector(
                         onTap: () =>
                             Routes(context: context).navigate(QuestionGoal()),
+                        child: (Utils.profileUser.goal == null)
+                            ? Container(
+                                margin: EdgeInsets.all(5.0),
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    boxShadow: Utils.getShadow(),
+                                    borderRadius: BorderRadius.circular(10.0)),
+                                child: Center(
+                                    child: Padding(
+                                  padding: EdgeInsets.all(20.0),
+                                  child: Column(
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsets.only(bottom: 5.0),
+                                        child: Icon(
+                                          Icons.add,
+                                          size: 36.0,
+                                          color: UtilColors.primaryColor,
+                                        ),
+                                      ),
+                                      const Padding(
+                                        padding: EdgeInsets.only(top: 5.0),
+                                        child: Text('Create New Goal'),
+                                      )
+                                    ],
+                                  ),
+                                )))
+                            : const SizedBox.shrink(),
+                      )),
+                ],
+              ),
+              Row(
+                children: [
+                  Expanded(
+                      flex: 1,
+                      child: GestureDetector(
+                        onTap: () =>
+                            Routes(context: context).navigate(GoalList()),
                         child: Container(
                             margin: EdgeInsets.all(5.0),
                             decoration: BoxDecoration(
@@ -102,14 +150,14 @@ class _DashboardState extends State<Dashboard> {
                                   Padding(
                                     padding: EdgeInsets.only(bottom: 5.0),
                                     child: Icon(
-                                      Icons.add,
+                                      Icons.history,
                                       size: 36.0,
                                       color: UtilColors.primaryColor,
                                     ),
                                   ),
                                   const Padding(
                                     padding: EdgeInsets.only(top: 5.0),
-                                    child: Text('Create New Goal'),
+                                    child: Text('Goal History'),
                                   )
                                 ],
                               ),
@@ -117,7 +165,7 @@ class _DashboardState extends State<Dashboard> {
                       )),
                 ],
               ),
-              const SizedBox(height: 5.0),
+              const SizedBox(height: 2.5),
               GestureDetector(
                 onTap: () async {
                   Utils.showLoader(context);
